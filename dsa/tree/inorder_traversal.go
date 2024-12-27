@@ -36,7 +36,7 @@ func pushLeft(l *list.List, node *TreeNode) {
 }
 
 func (i *InorderTraversal) TraversalLoop(node *TreeNode) {
-	l := list.Nsew()
+	l := list.New()
 
 	pushLeft(l, node)
 
