@@ -12,5 +12,7 @@ func DfsTopo(graph [][]int,cur int ,vis []bool) {
     }
     
     topo = append(topo,cur)
+
+	// adddd for check
     
 } 
