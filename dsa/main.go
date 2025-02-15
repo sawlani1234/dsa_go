@@ -1,11 +1,10 @@
 package main
 
 import (
-//	"fmt"
+	"fmt"
 	"solid_design/dsa/graph"
 	"solid_design/dsa/sorting"
-//	"solid_design/dsa/tree"
-
+	"solid_design/dsa/tree"
 )
 
 func Sort(a []int, strategy sorting.SortingStrategy) []int {
@@ -53,8 +52,43 @@ func getWeightedEdges() []graph.EdgeWeighted {
 	}
 }
 
+func getDictionary() []string {
+
+	return []string{"shubham","nishi","cheshta","shweta","poorvy"}
+}
+
+func setDictionary(root *tree.TrieNode) {
+
+	dict := getDictionary()
+
+	for i:=0;i<len(dict);i++ {
+		tree.Add(root,dict[i])
+	}
+
+}
+
+func searchWords(root *tree.TrieNode) {
+
+	words := []string{"shubham","swarnim","amisha","nishi"}
+	
+	for i:=0;i<len(words);i++ {
+		if tree.Search(root,words[i]) {
+			fmt.Println(words[i], "  is present")	
+		} else {
+			fmt.Println(words[i], " is not present")
+		}	
+	}
+}
+
+func trieTest() {
+	root := tree.NewTrieNode()
+	setDictionary(root)
+	searchWords(root)
+}
+
 
 func main() {
-	graph.Kruskal(getWeightedEdges(),6)
-   
+	// graph.Djisktra(graph.GetWeightedGraph(getWeightedEdges(),6),6)
+    // trieTest()
+
 }
